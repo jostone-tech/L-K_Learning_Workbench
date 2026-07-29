@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# L&K Prompt Library
 
-## Getting Started
+A searchable, filterable prompt library for IBM Consulting Learning & Knowledge teams. Covers all five ADDIE phases (Analysis, Design, Development, Implementation, Evaluation) across five roles: Instructional Designer, Iteration Manager, Programmer, Visual Designer, and QA.
 
-First, run the development server:
+Built with Next.js, Tailwind CSS, and deployed to Vercel. All prompts live in a single JSON file — no database, no backend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## For Teammates — Using the Library
+
+1. Open the library URL (shared by your team lead)
+2. Use the **ADDIE Phase** dropdown to filter by phase
+3. Use the **Role** dropdown to filter by your role
+4. Use the **Search** box to find prompts by keyword
+5. Click **Show more** on a card to read the full prompt
+6. Click **Copy prompt** to copy it directly to your clipboard
+7. Paste into your AI tool of choice (ChatGPT, Claude, Gemini, etc.)
+8. Replace the `[bracketed placeholders]` with your specific project details
+
+---
+
+## For Admins — Adding or Editing Prompts
+
+All prompts are stored in one file: **`data/prompts.json`**
+
+### Option A — Edit directly on GitHub (recommended for non-developers)
+
+1. Go to the GitHub repository for this project
+2. Navigate to `data/prompts.json`
+3. Click the **pencil icon** (Edit this file) in the top right of the file view
+4. Make your changes (see schema below)
+5. Scroll down, write a short commit message (e.g. `Add 3 new ID prompts for Analysis phase`)
+6. Click **Commit changes**
+7. Vercel will automatically detect the change and rebuild the site — changes are live within ~1 minute
+
+### Option B — Edit locally and push
+
+1. Clone the repo: `git clone https://github.com/YOUR-ORG/lk-prompt-library.git`
+2. Open `data/prompts.json` in any text editor (VS Code recommended)
+3. Make your changes
+4. Run `npm run dev` to preview changes locally at `http://localhost:3000`
+5. Commit and push to `main`: `git add . && git commit -m "your message" && git push`
+6. Vercel rebuilds automatically
+
+---
+
+## Prompt Schema
+
+Each prompt in `data/prompts.json` is an object with these five fields:
+
+```json
+{
+  "id": "unique-slug",
+  "title": "Short descriptive title",
+  "phase": "Analysis",
+  "role": "Instructional Designer",
+  "prompt": "Full prompt text. Use [bracketed placeholders] for content the user should replace."
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Field rules
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Field | Type | Allowed values |
+|-------|------|---------------|
+| `id` | string | Unique across all prompts. Use kebab-case, e.g. `id-analysis-4`. Never reuse an ID. |
+| `title` | string | Short and descriptive. Under 60 characters. |
+| `phase` | string | Exactly one of: `Analysis`, `Design`, `Development`, `Implementation`, `Evaluation` |
+| `role` | string | Exactly one of: `Instructional Designer`, `Iteration Manager`, `Programmer`, `Visual Designer`, `QA` |
+| `prompt` | string | Full prompt text. Use `[brackets]` for placeholders the user replaces. Escape any internal double quotes with `\"`. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adding a new prompt — example
 
-## Learn More
+Add a new object to the array. Copy an existing entry as a starting point:
 
-To learn more about Next.js, take a look at the following resources:
+```json
+{
+  "id": "id-analysis-4",
+  "title": "Write a Stakeholder Interview Guide",
+  "phase": "Analysis",
+  "role": "Instructional Designer",
+  "prompt": "You are an instructional designer preparing for stakeholder interviews as part of a needs analysis for [course topic]. Write a stakeholder interview guide that includes: an introduction script, 8 open-ended questions covering business goals, current performance gaps, target audience, existing resources, and constraints, plus probing follow-up questions for each. Format it so it can be used directly in a 30-minute interview."
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Place the comma after the closing `}` of the previous entry, before your new entry — or add it after the last entry without a trailing comma.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Common mistakes to avoid
 
-## Deploy on Vercel
+- **Duplicate IDs** — every `id` must be unique. Check before adding.
+- **Trailing commas** — JSON does not allow a comma after the last item in the array.
+- **Wrong phase or role spelling** — copy exactly from the allowed values table above. Typos will cause the prompt to not appear in filters.
+- **Unescaped quotes** — if your prompt text contains a `"` character, write it as `\"`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Local Development
+
+```powershell
+# Install dependencies
+npm install
+
+# Start dev server (hot reload)
+npm run dev
+# Opens at http://localhost:3000
+
+# Build static export (same as Vercel build)
+npm run build
+```
+
+Requires Node.js 18+.
+
+---
+
+## Deployment
+
+The app is deployed to Vercel and connected to this GitHub repository. Any push to the `main` branch triggers an automatic rebuild and deployment. No manual steps needed.
+
+To connect a new Vercel project:
+1. Go to [vercel.com](https://vercel.com) and click **Add New Project**
+2. Import this GitHub repository
+3. Vercel auto-detects Next.js — no configuration needed
+4. Click **Deploy**
+
+---
+
+## Project Structure
+
+```
+lk-prompt-library/
+├── app/
+│   ├── layout.tsx        # Root layout, IBM Plex Sans font, metadata
+│   ├── page.tsx          # Home page — filter logic and prompt grid
+│   └── globals.css       # IBM colour tokens, base styles
+├── components/
+│   ├── PromptCard.tsx    # Individual prompt card with expand/copy
+│   └── FilterBar.tsx     # Phase, role, and search filters
+├── data/
+│   └── prompts.json      # ← All prompts live here. Edit this to add/update prompts.
+├── types/
+│   └── prompt.ts         # TypeScript types for Prompt, ADDIEPhase, Role
+└── README.md
+```

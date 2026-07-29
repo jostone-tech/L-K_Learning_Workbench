@@ -1,0 +1,527 @@
+[
+  {
+    "id": "id-analysis-1",
+    "title": "Conduct a Training Needs Analysis",
+    "phase": "Analysis",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer working on a corporate consulting course for adult learners. Conduct a training needs analysis for the following situation: [describe the performance gap or business problem]. Identify the root cause of the gap (knowledge, skill, or motivation), determine whether training is the right solution, and outline what additional data you would need to collect. Format your response as a structured needs analysis report."
+  },
+  {
+    "id": "id-analysis-2",
+    "title": "Create Learner Personas",
+    "phase": "Analysis",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer creating learner personas for a corporate consulting course. Based on the following audience information: [paste audience data or describe the target learners], create 3 distinct learner personas. Each persona should include: name and role, experience level, motivations for taking the course, potential barriers to learning, preferred learning modalities, and one key insight that should influence the course design."
+  },
+  {
+    "id": "id-analysis-3",
+    "title": "Write a Gap Analysis Summary",
+    "phase": "Analysis",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer preparing a gap analysis for a consulting course project. The current state is: [describe current knowledge/skills/performance]. The desired state is: [describe target knowledge/skills/performance]. Write a concise gap analysis summary that identifies the specific gaps, prioritizes them by business impact, and recommends which gaps should be addressed through learning and which require non-training interventions."
+  },
+  {
+    "id": "id-design-1",
+    "title": "Write SMART Learning Objectives",
+    "phase": "Design",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer writing learning objectives for a corporate consulting course on [topic]. Using Bloom's Taxonomy, write 5 SMART learning objectives at the appropriate cognitive levels for adult professional learners. The audience is [describe audience]. Each objective should follow the format: 'By the end of this course, learners will be able to...' and include a measurable action verb, the specific condition, and the performance standard."
+  },
+  {
+    "id": "id-design-2",
+    "title": "Create a Course Design Document",
+    "phase": "Design",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer creating a design document for a consulting course. The course topic is [topic], the audience is [audience], and the delivery format is [eLearning/ILT/blended]. Create a course design document that includes: course overview and rationale, learning objectives, course structure and module breakdown, instructional strategies for each module, assessment approach, and estimated seat time. Format it as a professional document suitable for stakeholder review."
+  },
+  {
+    "id": "id-design-3",
+    "title": "Design a Storyboard Structure",
+    "phase": "Design",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer creating a storyboard structure for an eLearning module on [topic]. The module has the following learning objectives: [list objectives]. Design a slide-by-slide storyboard outline that includes: slide number, slide type (e.g. title, content, scenario, knowledge check), on-screen text summary, narration notes, visual description, and interaction type. Aim for [X] minutes of seat time. Use adult learning principles to ensure engagement and knowledge transfer."
+  },
+  {
+    "id": "id-development-1",
+    "title": "Write eLearning Narration Script",
+    "phase": "Development",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer writing narration script for an eLearning module. The slide content is: [paste slide content or storyboard notes]. Write a conversational narration script for this slide that: sounds natural when spoken aloud, aligns with the on-screen text without simply reading it word for word, reinforces the key learning point, and maintains an appropriate tone for corporate professional learners. Target approximately [X] seconds of audio."
+  },
+  {
+    "id": "id-development-2",
+    "title": "Write a Scenario-Based Learning Activity",
+    "phase": "Development",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer developing a scenario-based learning activity for a corporate consulting course. The learning objective is: [objective]. The audience is [audience]. Write a realistic workplace scenario that presents a decision point relevant to the objective. Include: a scene-setting paragraph, a clear challenge or decision the learner must make, 3 response options with consequence feedback for each (one correct, two plausible distractors), and a debrief that reinforces the correct approach."
+  },
+  {
+    "id": "id-development-3",
+    "title": "Review and Revise SME Feedback",
+    "phase": "Development",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer reconciling SME feedback on a course module. The original content is: [paste content]. The SME feedback is: [paste feedback]. Review the feedback and provide: a summary of changes that should be incorporated, any feedback that conflicts with instructional design best practices (with rationale), suggested revisions to the original content that honour the SME's expertise while preserving learning effectiveness, and any clarifying questions to send back to the SME."
+  },
+  {
+    "id": "id-implementation-1",
+    "title": "Write a Facilitator Guide",
+    "phase": "Implementation",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer writing a facilitator guide for an instructor-led training session on [topic]. The session is [X] hours long and covers the following content: [outline]. Write a facilitator guide that includes: session overview and objectives, materials needed, timing guide for each section, facilitator notes and talking points, discussion questions, activity instructions with debrief guidance, and tips for managing common learner questions or challenges."
+  },
+  {
+    "id": "id-implementation-2",
+    "title": "Create a Course Rollout Communication",
+    "phase": "Implementation",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer supporting the launch of a new course: [course name]. The audience is [audience] and the course launches on [date]. Write a launch communication email for managers to send to their teams. The email should: explain what the course is and why it matters, state the completion deadline and expected time commitment, include clear instructions for how to access the course, and motivate participation by connecting the learning to real work outcomes."
+  },
+  {
+    "id": "id-implementation-3",
+    "title": "Develop LMS Setup Guidance",
+    "phase": "Implementation",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer preparing LMS setup guidance for a new course deployment. The course is [course name], the LMS is [LMS name], and the audience is [audience]. Write a step-by-step LMS setup checklist for the LMS administrator that covers: course upload and SCORM/xAPI settings, learner enrollment or self-enrollment configuration, completion criteria and scoring thresholds, notification and reminder settings, and reporting requirements."
+  },
+  {
+    "id": "id-evaluation-1",
+    "title": "Design a Kirkpatrick Level 1 Survey",
+    "phase": "Evaluation",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer designing a post-course evaluation survey using the Kirkpatrick Level 1 model (Reaction). The course is [course name] for [audience]. Write a 10-question survey that measures learner satisfaction, perceived relevance, and intent to apply learning. Include a mix of Likert scale questions and open-ended questions. Ensure the questions are specific enough to generate actionable feedback for course improvement."
+  },
+  {
+    "id": "id-evaluation-2",
+    "title": "Build a Kirkpatrick Level 2 Assessment",
+    "phase": "Evaluation",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer building a knowledge assessment for a corporate consulting course using Kirkpatrick Level 2 (Learning). The course covers: [list key topics]. The learning objectives are: [list objectives]. Write a 10-question assessment that measures achievement of the learning objectives. Include a variety of question types (multiple choice, scenario-based, true/false). Provide an answer key with rationale for each correct answer."
+  },
+  {
+    "id": "id-evaluation-3",
+    "title": "Analyze Course Evaluation Data",
+    "phase": "Evaluation",
+    "role": "Instructional Designer",
+    "prompt": "You are an instructional designer analyzing post-course evaluation data. The course is [course name]. Here is the evaluation data: [paste survey results, completion rates, assessment scores]. Analyze this data and produce a summary report that includes: overall learner satisfaction rating, key themes from open-ended responses, assessment performance highlights and gaps, recommendations for course improvement, and suggested next steps for the next course iteration."
+  },
+  {
+    "id": "im-analysis-1",
+    "title": "Define Project Scope for a Course Build",
+    "phase": "Analysis",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager scoping a new consulting course development project. The course is [course name], the client/stakeholder is [stakeholder], and the target launch date is [date]. Draft a project scope document that includes: project objectives, deliverables list, out-of-scope items, key assumptions, constraints, and a preliminary risk register. The document should be suitable for stakeholder sign-off before the project begins."
+  },
+  {
+    "id": "im-analysis-2",
+    "title": "Plan a Stakeholder Kickoff Meeting",
+    "phase": "Analysis",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager planning a kickoff meeting for a new course development project. The project is [project name] and the stakeholders include [list stakeholders and their roles]. Create a kickoff meeting agenda that covers: project overview and goals, roles and responsibilities, timeline and milestones, communication plan, decision-making process, and next steps. Also write 5 key questions to ask stakeholders during the meeting to uncover hidden requirements or risks."
+  },
+  {
+    "id": "im-analysis-3",
+    "title": "Build a Project Timeline",
+    "phase": "Analysis",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager building a project timeline for a course development project. The project involves: [list major deliverables]. The team includes: [list team members and roles]. The launch date is [date]. Create a phased project timeline using ADDIE as the framework. Include milestones, dependencies, review cycles, and buffer time for revisions. Identify the critical path and flag any timeline risks."
+  },
+  {
+    "id": "im-design-1",
+    "title": "Create a Sprint Plan for Design Phase",
+    "phase": "Design",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager planning a sprint for the design phase of a consulting course project. The design deliverables are: [list deliverables, e.g. design document, storyboard, style guide]. The sprint is [X] weeks long and the team consists of [team members and roles]. Create a sprint plan that breaks deliverables into tasks, assigns ownership, sets daily or weekly check-in points, and defines the definition of done for each deliverable."
+  },
+  {
+    "id": "im-design-2",
+    "title": "Write a Design Review Facilitation Guide",
+    "phase": "Design",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager facilitating a design review meeting for a course project. The deliverable under review is [design document/storyboard]. The reviewers are [list reviewers and roles]. Write a facilitation guide for the review meeting that includes: meeting objectives, pre-read instructions for reviewers, a structured review agenda, guidance on how to capture and prioritize feedback, and a clear decision framework for resolving conflicting feedback."
+  },
+  {
+    "id": "im-design-3",
+    "title": "Build a Design Phase Backlog",
+    "phase": "Design",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager building a backlog for the design phase of a course project. The course is [course name] and involves the following design activities: [list activities]. Write a prioritized backlog of user stories or tasks in the format: 'As a [role], I need [deliverable] so that [outcome].' Include acceptance criteria for each item. Prioritize the backlog based on dependencies and business value."
+  },
+  {
+    "id": "im-development-1",
+    "title": "Write a Weekly Status Update",
+    "phase": "Development",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager writing a weekly status update for a course development project. This week's progress: [describe what was completed]. Upcoming work: [describe what is planned next week]. Issues or blockers: [describe any blockers]. Write a concise, professional status update email suitable for senior stakeholders. Use a RAG (Red/Amber/Green) status indicator and keep the update to one page or less."
+  },
+  {
+    "id": "im-development-2",
+    "title": "Create a Risk and Issues Log",
+    "phase": "Development",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager maintaining a risk and issues log for a course development project. The current risks and issues are: [describe known risks and issues]. Create a risk and issues log with the following fields for each item: ID, description, category (risk or issue), likelihood, impact, severity, owner, mitigation or resolution plan, and status. Prioritize the log by severity and highlight any items requiring immediate stakeholder escalation."
+  },
+  {
+    "id": "im-development-3",
+    "title": "Facilitate a Sprint Retrospective",
+    "phase": "Development",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager facilitating a sprint retrospective for a course development team. The sprint covered: [describe sprint goals and what was delivered]. Team size is [X] people. Write a retrospective facilitation guide that includes: a warm-up activity, a structured reflection framework (e.g. Start/Stop/Continue or 4Ls), instructions for dot-voting on action items, and a template for capturing and tracking retrospective actions. Also write 3 targeted questions to surface process improvements specific to L&D project teams."
+  },
+  {
+    "id": "im-implementation-1",
+    "title": "Create a Course Launch Checklist",
+    "phase": "Implementation",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager coordinating the launch of a new course: [course name]. The launch date is [date]. Create a comprehensive go-live checklist organized by workstream (content, LMS, communications, stakeholder readiness). Each item should have an owner, due date field, and completion status. Include pre-launch, launch day, and post-launch tasks."
+  },
+  {
+    "id": "im-implementation-2",
+    "title": "Draft a Stakeholder Launch Communication",
+    "phase": "Implementation",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager drafting a launch communication for stakeholders on the completion of a course project. The course is [course name] and has just been launched on [date]. Write a stakeholder announcement that summarizes: what was delivered, key features of the course, how learners access it, who to contact for support, and what metrics will be reported and when. Keep the tone professional and results-focused."
+  },
+  {
+    "id": "im-implementation-3",
+    "title": "Build a Post-Launch Support Plan",
+    "phase": "Implementation",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager building a post-launch support plan for a newly deployed course. The course is [course name] and was launched on [date]. The support team consists of [team members]. Write a post-launch support plan that covers: the first 30/60/90 days, escalation paths for technical and content issues, a schedule for monitoring completion rates and learner feedback, and a process for triaging and prioritizing fixes or updates."
+  },
+  {
+    "id": "im-evaluation-1",
+    "title": "Write a Project Retrospective Report",
+    "phase": "Evaluation",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager writing a retrospective report for a completed course development project. The project was [project name], ran from [start date] to [end date], and delivered [list deliverables]. Write a project retrospective report that covers: what went well, what could have been done better, key lessons learned, process improvements to apply to future projects, and a summary of final delivery against the original scope, timeline, and budget."
+  },
+  {
+    "id": "im-evaluation-2",
+    "title": "Report on Course Completion Metrics",
+    "phase": "Evaluation",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager reporting on course completion metrics to senior stakeholders. The course is [course name] and has been live for [X] weeks. Completion data: [paste data]. Write an executive-level metrics report that includes: completion rate vs. target, trend over time, breakdown by audience segment if available, interpretation of the data, and recommended actions to improve completion if needed."
+  },
+  {
+    "id": "im-evaluation-3",
+    "title": "Capture Lessons Learned",
+    "phase": "Evaluation",
+    "role": "Iteration Manager",
+    "prompt": "You are an iteration manager capturing lessons learned at the close of a course project. Facilitate a lessons learned session by writing: 5 structured questions to ask the team across the areas of process, collaboration, tools, and stakeholder management; a template for capturing responses; a framework for prioritizing which lessons should become formal process changes; and a one-page summary format suitable for sharing with the broader L&D practice."
+  },
+  {
+    "id": "prog-analysis-1",
+    "title": "Assess LMS Technical Requirements",
+    "phase": "Analysis",
+    "role": "Programmer",
+    "prompt": "You are a programmer assessing the technical requirements for deploying a new eLearning course. The LMS is [LMS name and version]. The course will be built in [Storyline 360/Rise 360/other]. Conduct a technical requirements assessment that covers: supported SCORM/xAPI versions, browser and device compatibility requirements, file size limits, video hosting options, accessibility compliance requirements (WCAG 2.1 AA), and any known LMS-specific quirks or limitations that will affect development decisions."
+  },
+  {
+    "id": "prog-analysis-2",
+    "title": "Evaluate Authoring Tool Suitability",
+    "phase": "Analysis",
+    "role": "Programmer",
+    "prompt": "You are a programmer evaluating authoring tool options for a new course project. The course requirements are: [describe content type, interactions, media, accessibility needs, and delivery format]. Evaluate the suitability of [Storyline 360 / Rise 360 / both] for this project. For each tool, assess: strengths and limitations for this specific project, development effort estimate, accessibility support, mobile responsiveness, and your recommendation with rationale."
+  },
+  {
+    "id": "prog-analysis-3",
+    "title": "Define Technical Scope and Constraints",
+    "phase": "Analysis",
+    "role": "Programmer",
+    "prompt": "You are a programmer defining the technical scope for a course development project. The course is [course name] and will be built in [authoring tool]. Based on the design requirements: [summarize design requirements], write a technical scope document that outlines: what will and will not be built, interaction types and their complexity, media requirements, SCORM packaging approach, estimated build time by module, and technical risks or constraints the team should be aware of."
+  },
+  {
+    "id": "prog-design-1",
+    "title": "Design Interaction Specifications",
+    "phase": "Design",
+    "role": "Programmer",
+    "prompt": "You are a programmer writing interaction specifications for a course module. The storyboard includes the following interactive elements: [describe interactions from storyboard]. For each interaction, write a technical specification that includes: interaction type, trigger and behavior description, variables needed, branching logic, states and layers required, and any accessibility considerations. Format this as a technical spec document the development team can build from."
+  },
+  {
+    "id": "prog-design-2",
+    "title": "Scope and Plan Template Development",
+    "phase": "Design",
+    "role": "Programmer",
+    "prompt": "You are a programmer scoping the development of reusable templates for a course project. The course has [X] modules and uses [Storyline 360/Rise 360]. Based on the design document: [summarize design], identify which slide or screen types recur across the course and should be built as master templates. For each template, define: the template name, use cases, required variables or states, estimated build time, and reuse potential for future projects."
+  },
+  {
+    "id": "prog-design-3",
+    "title": "Plan SCORM Packaging Strategy",
+    "phase": "Design",
+    "role": "Programmer",
+    "prompt": "You are a programmer planning the SCORM packaging strategy for a multi-module course. The course has [X] modules and will be deployed to [LMS name]. The client's requirements are: [describe completion tracking, scoring, and reporting needs]. Write a SCORM packaging plan that covers: whether to package as one SCORM object or multiple, completion trigger settings, scoring and pass/fail thresholds, suspend data requirements, and testing approach before LMS upload."
+  },
+  {
+    "id": "prog-development-1",
+    "title": "Build a Storyline Interaction",
+    "phase": "Development",
+    "role": "Programmer",
+    "prompt": "You are a programmer building an interaction in Articulate Storyline 360. The interaction is: [describe the interaction type and behavior from the storyboard]. Write step-by-step build instructions for this interaction that cover: slide setup and layout, required triggers and conditions, variables needed and how they are set, layer structure, states for each object, and how to test the interaction works correctly. Include any accessibility considerations (tab order, alt text, focus indicators)."
+  },
+  {
+    "id": "prog-development-2",
+    "title": "Troubleshoot a SCORM Publishing Issue",
+    "phase": "Development",
+    "role": "Programmer",
+    "prompt": "You are a programmer troubleshooting a SCORM publishing issue. The problem is: [describe the issue, e.g. course not tracking completion, score not reporting, course showing as incomplete]. The course was built in [Storyline/Rise], published as [SCORM 1.2/2004], and uploaded to [LMS name]. Walk through a systematic troubleshooting process: list the most likely causes of this issue, describe diagnostic steps to isolate the cause, and provide the fix or workaround for each likely cause."
+  },
+  {
+    "id": "prog-development-3",
+    "title": "Optimize Course File Size",
+    "phase": "Development",
+    "role": "Programmer",
+    "prompt": "You are a programmer optimizing the file size of an eLearning course built in [Storyline 360/Rise 360]. The current published file size is [X MB] and the LMS limit is [Y MB]. Describe a systematic approach to reducing file size that covers: audio compression settings, video optimization, image format and resolution best practices, font embedding, and any tool-specific settings in Storyline/Rise that reduce output size. Prioritize techniques by effort vs. size reduction impact."
+  },
+  {
+    "id": "prog-implementation-1",
+    "title": "Write LMS Upload and Deployment Steps",
+    "phase": "Implementation",
+    "role": "Programmer",
+    "prompt": "You are a programmer writing deployment documentation for uploading a course to the LMS. The course is [course name], the LMS is [LMS name], and the SCORM package is [SCORM 1.2/2004]. Write step-by-step deployment instructions that cover: uploading the SCORM zip, configuring course settings, setting completion and scoring criteria, assigning the course to the correct audience, running a test enrollment to verify tracking, and confirming the course appears correctly for learners."
+  },
+  {
+    "id": "prog-implementation-2",
+    "title": "Conduct User Acceptance Testing",
+    "phase": "Implementation",
+    "role": "Programmer",
+    "prompt": "You are a programmer leading user acceptance testing (UAT) for a newly built course. The course is [course name] and is deployed on [LMS name]. Write a UAT test plan that includes: test objectives, test environment setup, a test script covering all interactions and navigation paths, SCORM tracking verification steps, accessibility checks, browser and device compatibility tests, pass/fail criteria, and a defect logging template."
+  },
+  {
+    "id": "prog-implementation-3",
+    "title": "Fix a Post-Launch Technical Defect",
+    "phase": "Implementation",
+    "role": "Programmer",
+    "prompt": "You are a programmer fixing a technical defect reported after course launch. The defect is: [describe the defect]. The course is built in [Storyline/Rise] and deployed on [LMS]. Write a defect resolution plan that includes: root cause analysis, the fix to be applied in the authoring tool, re-publishing and re-upload steps, regression testing checklist to ensure the fix didn't break anything else, and communication to stakeholders about the fix and any learner impact."
+  },
+  {
+    "id": "prog-evaluation-1",
+    "title": "Run Post-Launch Performance Testing",
+    "phase": "Evaluation",
+    "role": "Programmer",
+    "prompt": "You are a programmer running post-launch performance testing on a deployed course. The course is [course name] on [LMS name]. Write a performance testing checklist that covers: page load time across connection speeds, video buffering behavior, interaction response time, mobile device performance, concurrent user load if applicable, and LMS reporting accuracy. For each test, define the pass threshold and describe what action to take if the test fails."
+  },
+  {
+    "id": "prog-evaluation-2",
+    "title": "Audit Course Accessibility",
+    "phase": "Evaluation",
+    "role": "Programmer",
+    "prompt": "You are a programmer conducting a WCAG 2.1 AA accessibility audit on a published eLearning course. The course is built in [Storyline/Rise]. Write an accessibility audit checklist covering: keyboard navigation and tab order, screen reader compatibility (alt text, ARIA labels), colour contrast ratios, captions and transcripts for audio/video, focus indicators, and any authoring-tool-specific accessibility settings. For each item, describe how to test it and what a pass looks like."
+  },
+  {
+    "id": "prog-evaluation-3",
+    "title": "Document Technical Lessons Learned",
+    "phase": "Evaluation",
+    "role": "Programmer",
+    "prompt": "You are a programmer documenting technical lessons learned at the end of a course project. The project used [authoring tool] and [LMS]. Write a technical lessons learned document that covers: build decisions that worked well and should be repeated, technical problems encountered and how they were resolved, LMS-specific issues and workarounds, reusable assets or templates created, and recommendations for the next project's technical approach. Format it as a knowledge base article for the development team."
+  },
+  {
+    "id": "vd-analysis-1",
+    "title": "Conduct a Brand Audit",
+    "phase": "Analysis",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer conducting a brand audit for a new course project. The client/brand is [brand name] and the existing brand guidelines document is: [describe or paste key brand elements]. Conduct a brand audit that assesses: logo usage rules, approved colour palette, typography system, iconography and illustration style, photography style, and any existing eLearning or presentation assets. Identify gaps in the brand guidelines that will need to be resolved before design begins."
+  },
+  {
+    "id": "vd-analysis-2",
+    "title": "Create a Visual Design Brief",
+    "phase": "Analysis",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer creating a visual design brief for a new consulting course. The course is [course name], the audience is [audience], and the brand is [brand name]. Write a visual design brief that captures: project overview, target audience and their visual preferences, brand requirements and constraints, tone and visual personality (e.g. professional, approachable, bold), deliverables required, and key questions to resolve with the instructional designer and stakeholders before design begins."
+  },
+  {
+    "id": "vd-analysis-3",
+    "title": "Benchmark Competitor Visual Design",
+    "phase": "Analysis",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer benchmarking visual design approaches for a consulting course project. The course topic is [topic] and the audience is corporate professionals. Describe a process for visual benchmarking that covers: how to identify 3–5 relevant reference examples (from eLearning, corporate presentations, or industry reports), what visual elements to analyze in each (layout, colour, typography, imagery style, information density), and how to synthesize findings into a moodboard or visual direction recommendation for stakeholder alignment."
+  },
+  {
+    "id": "vd-design-1",
+    "title": "Create a Course Style Guide",
+    "phase": "Design",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer creating a style guide for a consulting course. The brand is [brand name] and the course will be built in [Storyline/Rise/PowerPoint]. Write a course style guide that defines: colour palette with hex codes and usage rules, typography (heading, body, caption sizes and weights), button and UI element styles, iconography style and sourcing, layout grid and spacing system, imagery and photography guidance, and do's and don'ts. The style guide will be used by the full production team."
+  },
+  {
+    "id": "vd-design-2",
+    "title": "Design a UI Mockup for Course Templates",
+    "phase": "Design",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer creating UI mockup specifications for course template slides. The course is built in [Storyline/Rise] and the style guide is: [summarize key style elements]. Write detailed design specifications for the following slide templates: [list slide types, e.g. title slide, content slide, scenario slide, knowledge check, summary]. For each template, describe: layout structure, colour and typography usage, image placement, interactive element styling, and any responsive design considerations."
+  },
+  {
+    "id": "vd-design-3",
+    "title": "Define a Colour and Typography System",
+    "phase": "Design",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer defining the colour and typography system for a consulting course. The brand colours are: [list brand colours]. The course audience is corporate professionals and WCAG 2.1 AA accessibility is required. Define a full colour system that includes: primary, secondary, and neutral colours with hex codes, semantic colours (success, warning, error, info), background and text pairings that meet WCAG AA contrast ratios, and usage rules. Define a typography system that includes font families, weights, sizes, and line heights for each text role (heading 1–3, body, caption, label, button)."
+  },
+  {
+    "id": "vd-development-1",
+    "title": "Produce Slide Design Assets",
+    "phase": "Development",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer producing slide design assets for an eLearning course. The style guide is: [summarize]. The storyboard for this module is: [summarize or paste key slides]. Write a production checklist for creating the slide assets that covers: file naming conventions, master slide/template setup, image sourcing and editing steps, icon production or sourcing, colour application checks, typography consistency checks, and export settings for handoff to the developer."
+  },
+  {
+    "id": "vd-development-2",
+    "title": "Design an Infographic for Course Content",
+    "phase": "Development",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer creating an infographic for a consulting course module. The content to visualize is: [paste or describe the content]. The infographic should be suitable for adult professional learners and align with the course style guide: [summarize style]. Write a design brief for the infographic that covers: key message and hierarchy, recommended infographic type (e.g. process, comparison, timeline, data), layout structure, colour usage, typography, and any animation considerations if the infographic will be built in Storyline."
+  },
+  {
+    "id": "vd-development-3",
+    "title": "Create Icon and Illustration Guidelines",
+    "phase": "Development",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer creating icon and illustration guidelines for a consulting course project. The brand is [brand name] and the course style is [describe visual tone]. Write guidelines covering: approved icon style (line, filled, outline), preferred icon libraries or sources, sizing and colour usage rules for icons, illustration style if applicable, how to adapt stock icons to match the brand, and file format and naming conventions for handoff. Include examples of correct and incorrect usage."
+  },
+  {
+    "id": "vd-implementation-1",
+    "title": "Prepare Asset Handoff for Developers",
+    "phase": "Implementation",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer preparing a design asset handoff package for the development team. The course is [course name] and the developer uses [Storyline/Rise]. Write a handoff checklist that covers: folder structure and file naming conventions, image formats and resolution specs, font files and licensing, colour codes and style reference document, interaction states for buttons and interactive elements, any animation specifications, and a README file summarizing the handoff contents and designer contact for questions."
+  },
+  {
+    "id": "vd-implementation-2",
+    "title": "Conduct a Visual QA Review",
+    "phase": "Implementation",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer conducting a visual QA review of a built course before launch. The course is [course name] built in [Storyline/Rise]. Write a visual QA checklist that covers: consistency with the style guide (colours, fonts, spacing), image quality and alignment, icon and illustration consistency, button and interactive element styling, text legibility at full screen and mobile sizes, accessibility colour contrast, and overall visual polish. For each item, describe what a pass looks like."
+  },
+  {
+    "id": "vd-implementation-3",
+    "title": "Review Final Visuals Against Brand Standards",
+    "phase": "Implementation",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer conducting a final brand compliance review for a course before client delivery. The brand standards are: [paste or describe key standards]. Review the built course against these standards and produce a brand compliance report that flags: any deviations from the approved colour palette, incorrect font usage, logo misuse or absence, imagery that conflicts with brand guidelines, and overall impression vs. brand personality. Prioritize findings as must-fix vs. recommended improvements."
+  },
+  {
+    "id": "vd-evaluation-1",
+    "title": "Gather and Incorporate Visual Feedback",
+    "phase": "Evaluation",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer reviewing post-launch feedback related to the visual design of a course. The feedback received is: [paste feedback from learners, stakeholders, or QA]. Analyze the feedback and produce an action plan that: categorizes feedback by type (aesthetic, usability, accessibility, brand), prioritizes items by learner impact, proposes specific design changes for the top 3 issues, and identifies any feedback that should inform the visual design approach for future courses."
+  },
+  {
+    "id": "vd-evaluation-2",
+    "title": "Update the Design System After Launch",
+    "phase": "Evaluation",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer updating the course design system after a project has launched. Based on what was built and the feedback received: [describe what changed during production and what feedback was received], write a design system update document that covers: new or revised components added during development, corrections to the style guide, new do's and don'ts identified, reusable assets created during the project that should be added to the asset library, and recommendations for the next version of the design system."
+  },
+  {
+    "id": "vd-evaluation-3",
+    "title": "Document Visual Design Lessons Learned",
+    "phase": "Evaluation",
+    "role": "Visual Designer",
+    "prompt": "You are a visual designer documenting visual design lessons learned at the end of a course project. The project was [project name] and used [tools]. Write a lessons learned document covering: visual design decisions that worked well and should be repeated, design challenges encountered and how they were resolved, client or stakeholder feedback that required significant rework and how to prevent it next time, tools or processes that improved efficiency, and recommendations for the next project's visual design approach."
+  },
+  {
+    "id": "qa-analysis-1",
+    "title": "Define QA Review Criteria",
+    "phase": "Analysis",
+    "role": "QA",
+    "prompt": "You are a QA reviewer defining review criteria for a new course development project. The course is [course name], built in [authoring tool], and deployed on [LMS]. Write a QA criteria document that covers: content accuracy standards, instructional design quality standards, visual design consistency standards, technical functionality standards (SCORM, interactions, navigation), accessibility standards (WCAG 2.1 AA), and LMS behavior standards. For each criterion, define what a pass and fail look like."
+  },
+  {
+    "id": "qa-analysis-2",
+    "title": "Create a QA Test Plan",
+    "phase": "Analysis",
+    "role": "QA",
+    "prompt": "You are a QA reviewer creating a test plan for a course project. The course is [course name] and has [X] modules. Write a QA test plan that covers: test objectives, what will and will not be tested, test environments (browsers, devices, LMS), test types (content review, functional testing, accessibility, SCORM), entry and exit criteria for QA, defect severity levels and definitions, defect logging process, and the QA schedule aligned to the project timeline."
+  },
+  {
+    "id": "qa-analysis-3",
+    "title": "Identify QA Risks Early in the Project",
+    "phase": "Analysis",
+    "role": "QA",
+    "prompt": "You are a QA reviewer identifying quality risks at the start of a course project. The project details are: [describe project scope, tools, timeline, and team]. Write a QA risk assessment that identifies: the top 5 quality risks for this project, the likelihood and impact of each risk, early warning signs to watch for during development, and mitigation strategies the team can put in place from day one to reduce rework and quality issues at review."
+  },
+  {
+    "id": "qa-design-1",
+    "title": "Review a Design Document for Quality",
+    "phase": "Design",
+    "role": "QA",
+    "prompt": "You are a QA reviewer conducting a quality review of a course design document. The design document is: [paste or summarize the design document]. Review it against the following criteria: clarity and completeness of learning objectives, alignment between objectives and assessment strategy, logical course structure and flow, appropriateness of instructional strategies for the audience, clarity of visual and interaction design direction, and any gaps or ambiguities that could cause problems during development. Format your review as a structured feedback report."
+  },
+  {
+    "id": "qa-design-2",
+    "title": "Review a Storyboard for Accuracy and Quality",
+    "phase": "Design",
+    "role": "QA",
+    "prompt": "You are a QA reviewer conducting a storyboard review for a course module. The storyboard is: [paste or summarize]. Review the storyboard for: content accuracy (flag any factual errors or unclear statements), alignment with learning objectives, instructional quality (scenarios, knowledge checks, feedback), visual design direction clarity, narration script quality and tone, and completeness (are all slides accounted for, are all interactions specified). Provide your feedback in a structured review log with page references."
+  },
+  {
+    "id": "qa-design-3",
+    "title": "Write a QA Checklist for Design Deliverables",
+    "phase": "Design",
+    "role": "QA",
+    "prompt": "You are a QA reviewer writing a QA checklist for design phase deliverables. The deliverables to be reviewed are: [list deliverables, e.g. design document, storyboard, style guide]. For each deliverable, write a checklist of quality criteria that the reviewer should assess. Include criteria for completeness, accuracy, clarity, consistency, stakeholder alignment, and readiness to proceed to development. The checklist should be usable by team members conducting peer reviews."
+  },
+  {
+    "id": "qa-development-1",
+    "title": "Conduct Functional Testing of a Built Course",
+    "phase": "Development",
+    "role": "QA",
+    "prompt": "You are a QA reviewer conducting functional testing on a built eLearning course. The course is [course name] built in [Storyline/Rise]. Write a functional testing script that covers: all navigation paths (next, back, menu), all interactive elements (click, drag, input), knowledge check and assessment behavior, branching and conditional logic, audio and video playback, SCORM completion and scoring triggers, and behavior on course re-entry. For each test, specify the steps, expected result, and how to log a failure."
+  },
+  {
+    "id": "qa-development-2",
+    "title": "Conduct an Accessibility Review",
+    "phase": "Development",
+    "role": "QA",
+    "prompt": "You are a QA reviewer conducting an accessibility review of a built eLearning course against WCAG 2.1 AA standards. The course is built in [Storyline/Rise]. Write an accessibility review checklist and report template covering: keyboard navigation and focus order, screen reader behavior (NVDA/JAWS), alt text for all images, captions and transcripts for audio/video, colour contrast for all text and interactive elements, form input labels, and any course-specific accessibility features. Document findings with severity ratings."
+  },
+  {
+    "id": "qa-development-3",
+    "title": "Log and Prioritize Defects",
+    "phase": "Development",
+    "role": "QA",
+    "prompt": "You are a QA reviewer logging defects found during a course review. The defects identified are: [list or describe defects found]. Create a defect log with the following fields for each defect: ID, title, description, steps to reproduce, expected result, actual result, severity (Critical/High/Medium/Low), module and slide reference, assigned to, and status. Prioritize the defects and write a summary for the development team highlighting must-fix items before the next milestone."
+  },
+  {
+    "id": "qa-implementation-1",
+    "title": "Conduct LMS QA Testing",
+    "phase": "Implementation",
+    "role": "QA",
+    "prompt": "You are a QA reviewer conducting LMS quality assurance testing for a newly uploaded course. The course is [course name], the LMS is [LMS name], and the SCORM version is [1.2/2004]. Write an LMS QA test script covering: course launch behavior, completion tracking (does the LMS mark complete at the right point), score reporting, resume/bookmark behavior, course display on desktop and mobile, enrollment and access control, and error handling. Include a sign-off checklist for go/no-go before learner access is enabled."
+  },
+  {
+    "id": "qa-implementation-2",
+    "title": "Facilitate User Acceptance Testing",
+    "phase": "Implementation",
+    "role": "QA",
+    "prompt": "You are a QA reviewer facilitating user acceptance testing (UAT) for a course before launch. The UAT participants are [describe participants, e.g. 5 representative learners and 2 managers]. Write a UAT facilitation guide that includes: how to brief participants, the UAT task script (what each participant should do and in what order), observation notes template, feedback collection questions for after the session, criteria for UAT pass/fail, and a process for triaging and acting on UAT findings before launch."
+  },
+  {
+    "id": "qa-implementation-3",
+    "title": "Write a Go-Live Sign-Off Document",
+    "phase": "Implementation",
+    "role": "QA",
+    "prompt": "You are a QA reviewer writing a go-live sign-off document for a course that is ready to launch. The course is [course name] and all QA activities have been completed. Write a go-live sign-off document that summarizes: QA activities completed and outcomes, outstanding known issues and their risk assessment, final accessibility compliance status, LMS deployment verification status, stakeholder approvals required, and a sign-off block for the project sponsor, instructional designer, and QA lead."
+  },
+  {
+    "id": "qa-evaluation-1",
+    "title": "Conduct a Post-Launch Course Audit",
+    "phase": "Evaluation",
+    "role": "QA",
+    "prompt": "You are a QA reviewer conducting a post-launch audit of a course that has been live for [X] weeks. The course is [course name]. Write a post-launch audit plan that covers: reviewing learner completion and drop-off data to identify potential usability issues, checking for any new defects or technical issues reported since launch, re-testing any high-risk interactions or SCORM behaviors, reviewing learner feedback for quality-related themes, and producing an audit summary report with recommended actions."
+  },
+  {
+    "id": "qa-evaluation-2",
+    "title": "Track and Report on Defect Resolution",
+    "phase": "Evaluation",
+    "role": "QA",
+    "prompt": "You are a QA reviewer tracking and reporting on defect resolution after course launch. The defect log contains: [paste or summarize open defects]. Write a defect status report that summarizes: total defects by severity, resolution rate to date, overdue items and their business impact, trends in defect types that suggest systemic quality issues, and recommendations for process changes that would reduce similar defects in future projects. Format the report for presentation to the project sponsor."
+  },
+  {
+    "id": "qa-evaluation-3",
+    "title": "Write QA Lessons Learned",
+    "phase": "Evaluation",
+    "role": "QA",
+    "prompt": "You are a QA reviewer writing QA lessons learned at the close of a course project. The project was [project name]. Write a lessons learned document covering: QA processes that worked well, review cycles that were insufficient or excessive, defect types that recurred and their root causes, communication patterns between QA and development that caused delays or rework, and recommendations for improving the QA process on future course projects. Include 3 specific, actionable process changes for the team to implement immediately."
+  }
+]
