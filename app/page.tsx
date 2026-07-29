@@ -46,7 +46,8 @@ export default function Home() {
 
           {/* Instructions banner */}
           <div className="bg-[#f7f8fa] border border-[#e5e7eb] rounded px-4 py-3 mb-4 text-[13px] text-[#57606a] leading-relaxed">
-            Use the drop-down menus to search for prompts by ADDIE phases, development roles, or key words in the prompt. If you would like to add or have suggestions on improving a prompt, please contact the administrator.
+            Use the drop-down menus to search for prompts by ADDIE phase, EdDev development role, or keyword. If you would like to add or have suggestions on improving a prompt, please contact the{" "}
+            <a href="mailto:jostone@us.ibm.com" className="text-[#0f62fe] hover:underline focus:outline-none focus:ring-2 focus:ring-[#0f62fe] rounded">administrator</a>.
           </div>
 
           <FilterBar
