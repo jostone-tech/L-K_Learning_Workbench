@@ -1,13 +1,21 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
-import type { Prompt, ADDIEPhase, Role } from "@/types/prompt";
+import type { Prompt, ADDIEPhase, Role, LearningType, DeliveryType } from "@/types/prompt";
 
 const VALID_PHASES: ADDIEPhase[] = [
   "Analysis", "Design", "Development", "Implementation", "Evaluation",
 ];
 const VALID_ROLES: Role[] = [
   "Instructional Designer", "Iteration Manager", "Programmer", "Visual Designer", "QA",
+];
+const VALID_LEARNING_TYPES: LearningType[] = [
+  "ILT", "Self-Paced eLearning", "Microlearning", "Scenario-based", "Experiential",
+  "Social and Collaborative", "Coaching and Mentoring", "Performance Support",
+  "Assessment and Practice", "Adaptive and Personalized", "Blended Learning", "Other",
+];
+const VALID_DELIVERY_TYPES: DeliveryType[] = [
+  "iSPO", "Video", "AI-Assisted Review", "Podcast", "Chatbot", "Job Aid", "Workshop Activity", "Other",
 ];
 
 interface ParsedRow {
@@ -19,10 +27,11 @@ interface ParsedRow {
 function parseRows(raw: string): ParsedRow[] {
   const lines = raw.trim().split("\n").filter((l) => l.trim() !== "");
   return lines.map((line, i) => {
-    // Split on tab (Excel/Sheets copy) — fall back to comma
-    const cells = line.includes("\t") ? line.split("\t") : line.split(",");
-    const [id, title, phase, role, ...promptParts] = cells.map((c) => c.trim());
-    const prompt = promptParts.join(line.includes("\t") ? "\t" : ",").trim();
+    const sep = line.includes("\t") ? "\t" : ",";
+    const cells = line.split(sep).map((c) => c.trim());
+    // Columns: id, title, phase, role, learningType, deliveryType, contributor, prompt
+    const [id, title, phase, role, learningType, deliveryType, contributor, ...promptParts] = cells;
+    const prompt = promptParts.join(sep).trim();
 
     const errors: string[] = [];
     if (!title)  errors.push("title is empty");
@@ -32,11 +41,24 @@ function parseRows(raw: string): ParsedRow[] {
     if (!role)   errors.push("role is empty");
     else if (!VALID_ROLES.includes(role as Role))
       errors.push(`role "${role}" is not valid — must be one of: ${VALID_ROLES.join(", ")}`);
+    if (learningType && !VALID_LEARNING_TYPES.includes(learningType as LearningType))
+      errors.push(`learningType "${learningType}" is not valid — must be one of: ${VALID_LEARNING_TYPES.join(", ")}`);
+    if (deliveryType && !VALID_DELIVERY_TYPES.includes(deliveryType as DeliveryType))
+      errors.push(`deliveryType "${deliveryType}" is not valid — must be one of: ${VALID_DELIVERY_TYPES.join(", ")}`);
     if (!prompt) errors.push("prompt text is empty");
 
     return {
       row: i + 1,
-      data: { id: id || undefined, title, phase: phase as ADDIEPhase, role: role as Role, prompt },
+      data: {
+        id: id || undefined,
+        title,
+        phase: phase as ADDIEPhase,
+        role: role as Role,
+        learningType: (learningType || undefined) as LearningType | undefined,
+        deliveryType: (deliveryType || undefined) as DeliveryType | undefined,
+        contributor: contributor || undefined,
+        prompt,
+      },
       errors,
     };
   });
@@ -120,11 +142,30 @@ export default function AdminPage() {
           <div className="bg-white border border-[#e5e7eb] rounded px-4 py-3 mb-6">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-[#57606a] mb-2">Expected column order</p>
             <div className="flex flex-wrap gap-2">
-              {["1. id (optional)", "2. title", "3. phase", "4. role", "5. prompt"].map((col) => (
+              {[
+                "1. id (optional)",
+                "2. title",
+                "3. phase",
+                "4. role",
+                "5. learningType (optional)",
+                "6. deliveryType (optional)",
+                "7. contributor (optional)",
+                "8. prompt",
+              ].map((col) => (
                 <span key={col} className="text-[11px] font-mono bg-[#f7f8fa] border border-[#e5e7eb] px-2 py-1 rounded">
                   {col}
                 </span>
               ))}
+            </div>
+            <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] text-[#57606a]">
+              <div>
+                <p className="font-semibold text-[#1f2328] mb-1">Valid Learning Types</p>
+                <p>{VALID_LEARNING_TYPES.join(", ")}</p>
+              </div>
+              <div>
+                <p className="font-semibold text-[#1f2328] mb-1">Valid Delivery Types</p>
+                <p>{VALID_DELIVERY_TYPES.join(", ")}</p>
+              </div>
             </div>
           </div>
 
@@ -137,7 +178,7 @@ export default function AdminPage() {
               id="paste-area"
               value={raw}
               onChange={(e) => { setRaw(e.target.value); setParsed(null); setJson(""); }}
-              placeholder={"id-analysis-4\tWrite a Stakeholder Interview Guide\tAnalysis\tInstructional Designer\tYou are an instructional designer…"}
+              placeholder={"id-analysis-4\tWrite a Stakeholder Interview Guide\tAnalysis\tInstructional Designer\tBlended Learning\tWorkshop Activity\tJoanna Stone\tYou are an instructional designer…"}
               rows={8}
               className="w-full rounded border border-[#e5e7eb] bg-white px-3 py-2 text-[12px] font-mono text-[#1f2328] placeholder-[#adb5bd] focus:outline-none focus:ring-2 focus:ring-[#0f62fe] focus:border-[#0f62fe] resize-y"
             />
@@ -210,10 +251,23 @@ export default function AdminPage() {
                               {r.data.role}
                             </span>
                           )}
+                          {r.data.learningType && (
+                            <span className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-[#f0f2f5] text-[#57606a]">
+                              {r.data.learningType}
+                            </span>
+                          )}
+                          {r.data.deliveryType && (
+                            <span className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-[#f0f2f5] text-[#57606a]">
+                              {r.data.deliveryType}
+                            </span>
+                          )}
                         </div>
                         <p className="text-[13px] font-semibold text-[#1f2328]">
                           {r.data.title || <span className="text-[#da1e28]">— no title —</span>}
                         </p>
+                        {r.data.contributor && (
+                          <p className="text-[11px] text-[#adb5bd] mt-0.5">Contributed by {r.data.contributor}</p>
+                        )}
                         {r.data.prompt && (
                           <p className="text-[11px] text-[#57606a] mt-1 line-clamp-2">
                             {r.data.prompt.slice(0, 120)}{r.data.prompt.length > 120 ? "…" : ""}
@@ -223,7 +277,7 @@ export default function AdminPage() {
                       {r.errors.length === 0 ? (
                         <span className="text-[11px] font-semibold text-[#198038] shrink-0">✓ Valid</span>
                       ) : (
-                        <span className="text-[11px] font-semibold text-[#da1e28] shrink-0">✗ Error</span>
+                        <span className="text-[11px] font-semibold text-[#da1e28] shrink-0">✕ Error</span>
                       )}
                     </div>
                     {r.errors.length > 0 && (
@@ -263,7 +317,7 @@ export default function AdminPage() {
                 className="w-full rounded border border-[#e5e7eb] bg-[#f7f8fa] px-3 py-2 text-[11px] font-mono text-[#1f2328] focus:outline-none focus:ring-2 focus:ring-[#0f62fe] resize-y"
               />
               <p className="mt-2 text-[11px] text-[#57606a]">
-                Paste these entries inside the <code className="font-mono text-[11px]">[&nbsp;]</code> array in <code className="font-mono text-[11px]">data/prompts.json</code> on GitHub. Add a comma after the last existing entry before pasting.
+                Paste these entries inside the <code className="font-mono text-[11px]">[ ]</code> array in <code className="font-mono text-[11px]">data/prompts.json</code> on GitHub. Add a comma after the last existing entry before pasting.
               </p>
             </div>
           )}
