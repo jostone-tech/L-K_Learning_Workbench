@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useMemo } from "react";
 import promptsData from "@/data/prompts.json";
@@ -9,19 +9,23 @@ import FilterBar from "@/components/FilterBar";
 const allPrompts = promptsData as Prompt[];
 
 export default function Home() {
-  const [phase, setPhase]   = useState("");
-  const [role, setRole]     = useState("");
-  const [search, setSearch] = useState("");
+  const [phase, setPhase]               = useState("");
+  const [role, setRole]                 = useState("");
+  const [learningType, setLearningType] = useState("");
+  const [deliveryType, setDeliveryType] = useState("");
+  const [search, setSearch]             = useState("");
 
   const filteredPrompts = useMemo(() => {
     const q = search.toLowerCase().trim();
     return allPrompts.filter((p) => {
-      if (phase && p.phase !== phase) return false;
-      if (role  && p.role  !== role)  return false;
+      if (phase        && p.phase        !== phase)        return false;
+      if (role         && p.role         !== role)         return false;
+      if (learningType && p.learningType !== learningType) return false;
+      if (deliveryType && p.deliveryType !== deliveryType) return false;
       if (q && !p.title.toLowerCase().includes(q) && !p.prompt.toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [phase, role, search]);
+  }, [phase, role, learningType, deliveryType, search]);
 
   return (
     <>
@@ -46,16 +50,20 @@ export default function Home() {
 
           {/* Instructions banner */}
           <div className="bg-[#f7f8fa] border border-[#e5e7eb] rounded px-4 py-3 mb-4 text-[13px] text-[#57606a] leading-relaxed">
-            Use the drop-down menus to search for prompts by ADDIE phase, EdDev development role, or keyword. If you would like to add or have suggestions on improving a prompt, please contact the{" "}
+            Use the drop-down menus to search for prompts by ADDIE phase, EdDev development role, learning type, or delivery type. If you would like to add or have suggestions on improving a prompt, please contact the{" "}
             <a href="mailto:jostone@us.ibm.com" className="text-[#0f62fe] hover:underline focus:outline-none focus:ring-2 focus:ring-[#0f62fe] rounded">administrator</a>.
           </div>
 
           <FilterBar
             phase={phase}
             role={role}
+            learningType={learningType}
+            deliveryType={deliveryType}
             search={search}
             onPhaseChange={setPhase}
             onRoleChange={setRole}
+            onLearningTypeChange={setLearningType}
+            onDeliveryTypeChange={setDeliveryType}
             onSearchChange={setSearch}
             totalCount={allPrompts.length}
             filteredCount={filteredPrompts.length}

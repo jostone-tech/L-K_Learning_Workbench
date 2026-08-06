@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import type { Prompt, ADDIEPhase, Role } from "@/types/prompt";
@@ -32,7 +32,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   const isLong    = prompt.prompt.length > PREVIEW_LENGTH;
   const displayed = expanded || !isLong
     ? prompt.prompt
-    : prompt.prompt.slice(0, PREVIEW_LENGTH).trimEnd() + "…";
+    : prompt.prompt.slice(0, PREVIEW_LENGTH).trimEnd() + "...";
 
   const phaseStyle = PHASE_STYLES[prompt.phase];
 
@@ -68,6 +68,16 @@ export default function PromptCard({ prompt }: PromptCardProps) {
           >
             {ROLE_ABBR[prompt.role]}
           </span>
+          {prompt.learningType && (
+            <span className="text-[10px] font-medium px-2 py-0.5 rounded-sm bg-[#f0f2f5] text-[#57606a]">
+              {prompt.learningType}
+            </span>
+          )}
+          {prompt.deliveryType && (
+            <span className="text-[10px] font-medium px-2 py-0.5 rounded-sm bg-[#f0f2f5] text-[#57606a]">
+              {prompt.deliveryType}
+            </span>
+          )}
         </div>
 
         {/* Title */}
@@ -94,13 +104,17 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
       {/* Card footer */}
       <div className="mt-auto px-4 pb-4 pt-2 border-t border-[#e5e7eb] flex items-center justify-between gap-2">
-        <span className="text-[11px] text-[#adb5bd]">
-          {prompt.role}
-        </span>
+        <div className="flex flex-col min-w-0">
+          {prompt.contributor && (
+            <span className="text-[11px] text-[#adb5bd] truncate">
+              {"Contributed by " + prompt.contributor}
+            </span>
+          )}
+        </div>
         <button
           onClick={handleCopy}
           aria-label={copied ? "Copied!" : "Copy prompt to clipboard"}
-          className="flex items-center gap-1.5 text-[12px] font-medium px-3 py-1.5 rounded border transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#0f62fe] focus:ring-offset-1"
+          className="flex-shrink-0 flex items-center gap-1.5 text-[12px] font-medium px-3 py-1.5 rounded border transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#0f62fe] focus:ring-offset-1"
           style={
             copied
               ? { background: "#198038", color: "#ffffff", borderColor: "#198038" }
@@ -128,3 +142,4 @@ export default function PromptCard({ prompt }: PromptCardProps) {
     </article>
   );
 }
+

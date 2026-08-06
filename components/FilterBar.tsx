@@ -1,6 +1,6 @@
-"use client";
+﻿"use client";
 
-import type { ADDIEPhase, Role } from "@/types/prompt";
+import type { ADDIEPhase, Role, LearningType, DeliveryType } from "@/types/prompt";
 
 const PHASES: ADDIEPhase[] = [
   "Analysis",
@@ -18,12 +18,42 @@ const ROLES: Role[] = [
   "QA",
 ];
 
+const LEARNING_TYPES: LearningType[] = [
+  "ILT",
+  "Self-Paced eLearning",
+  "Microlearning",
+  "Scenario-based",
+  "Experiential",
+  "Social and Collaborative",
+  "Coaching and Mentoring",
+  "Performance Support",
+  "Assessment and Practice",
+  "Adaptive and Personalized",
+  "Blended Learning",
+  "Other",
+];
+
+const DELIVERY_TYPES: DeliveryType[] = [
+  "iSPO",
+  "Video",
+  "AI-Assisted Review",
+  "Podcast",
+  "Chatbot",
+  "Job Aid",
+  "Workshop Activity",
+  "Other",
+];
+
 interface FilterBarProps {
   phase: string;
   role: string;
+  learningType: string;
+  deliveryType: string;
   search: string;
   onPhaseChange: (value: string) => void;
   onRoleChange: (value: string) => void;
+  onLearningTypeChange: (value: string) => void;
+  onDeliveryTypeChange: (value: string) => void;
   onSearchChange: (value: string) => void;
   totalCount: number;
   filteredCount: number;
@@ -35,60 +65,78 @@ const selectClass =
 export default function FilterBar({
   phase,
   role,
+  learningType,
+  deliveryType,
   search,
   onPhaseChange,
   onRoleChange,
+  onLearningTypeChange,
+  onDeliveryTypeChange,
   onSearchChange,
   totalCount,
   filteredCount,
 }: FilterBarProps) {
   return (
     <div className="bg-white border border-[#e5e7eb] rounded px-4 py-4 mb-6">
-      <div className="flex flex-col sm:flex-row gap-3">
-        {/* ADDIE Phase filter */}
-        <div className="flex-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {/* ADDIE Phase */}
+        <div>
           <label htmlFor="filter-phase" className="block text-[10px] font-semibold uppercase tracking-wider text-[#57606a] mb-1">
             ADDIE Phase
           </label>
           <div className="relative">
-            <select
-              id="filter-phase"
-              value={phase}
-              onChange={(e) => onPhaseChange(e.target.value)}
-              className={selectClass}
-            >
+            <select id="filter-phase" value={phase} onChange={(e) => onPhaseChange(e.target.value)} className={selectClass}>
               <option value="">All Phases</option>
-              {PHASES.map((p) => (
-                <option key={p} value={p}>{p}</option>
-              ))}
+              {PHASES.map((p) => <option key={p} value={p}>{p}</option>)}
             </select>
             <ChevronIcon />
           </div>
         </div>
 
-        {/* Role filter */}
-        <div className="flex-1">
+        {/* Role */}
+        <div>
           <label htmlFor="filter-role" className="block text-[10px] font-semibold uppercase tracking-wider text-[#57606a] mb-1">
             Role
           </label>
           <div className="relative">
-            <select
-              id="filter-role"
-              value={role}
-              onChange={(e) => onRoleChange(e.target.value)}
-              className={selectClass}
-            >
+            <select id="filter-role" value={role} onChange={(e) => onRoleChange(e.target.value)} className={selectClass}>
               <option value="">All Roles</option>
-              {ROLES.map((r) => (
-                <option key={r} value={r}>{r}</option>
-              ))}
+              {ROLES.map((r) => <option key={r} value={r}>{r}</option>)}
             </select>
             <ChevronIcon />
           </div>
         </div>
 
-        {/* Search */}
-        <div className="flex-[2]">
+        {/* Learning Type */}
+        <div>
+          <label htmlFor="filter-learning-type" className="block text-[10px] font-semibold uppercase tracking-wider text-[#57606a] mb-1">
+            Learning Type
+          </label>
+          <div className="relative">
+            <select id="filter-learning-type" value={learningType} onChange={(e) => onLearningTypeChange(e.target.value)} className={selectClass}>
+              <option value="">All Learning Types</option>
+              {LEARNING_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
+            </select>
+            <ChevronIcon />
+          </div>
+        </div>
+
+        {/* Delivery Type */}
+        <div>
+          <label htmlFor="filter-delivery-type" className="block text-[10px] font-semibold uppercase tracking-wider text-[#57606a] mb-1">
+            Delivery Type
+          </label>
+          <div className="relative">
+            <select id="filter-delivery-type" value={deliveryType} onChange={(e) => onDeliveryTypeChange(e.target.value)} className={selectClass}>
+              <option value="">All Delivery Types</option>
+              {DELIVERY_TYPES.map((d) => <option key={d} value={d}>{d}</option>)}
+            </select>
+            <ChevronIcon />
+          </div>
+        </div>
+
+        {/* Search — spans remaining columns */}
+        <div className="sm:col-span-2 lg:col-span-2">
           <label htmlFor="filter-search" className="block text-[10px] font-semibold uppercase tracking-wider text-[#57606a] mb-1">
             Search
           </label>
@@ -97,7 +145,7 @@ export default function FilterBar({
             type="search"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search prompts…"
+            placeholder="Search prompts..."
             className="w-full rounded border border-[#e5e7eb] bg-white px-3 py-2 text-[13px] text-[#1f2328] placeholder-[#adb5bd] focus:outline-none focus:ring-2 focus:ring-[#0f62fe] focus:border-[#0f62fe]"
           />
         </div>
