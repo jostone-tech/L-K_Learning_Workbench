@@ -52,8 +52,13 @@ All prompts are stored in one file: **`data/prompts.json`**
 3. Make your changes
 4. Run `npm run dev` to preview changes locally at `http://localhost:3000`
 5. Commit and push to `main`: `git add . && git commit -m "your message" && git push`
-6. Vercel rebuilds automatically
+Example: 
+cd C:\Users\JOANNASTONE\lk-prompt-library
+git add -A
+git commit -m "Add learning updated analysis learning prompts and README file"
+git push origin main
 
+6. Vercel rebuilds automatically
 ---
 
 ## Prompt Schema
